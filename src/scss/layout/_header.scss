@@ -6,25 +6,36 @@
 
   .contenido-header {
     padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    @include m.tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-  h1 {
-    color: v.$rojo;
-    margin: 0;
-    font-size: 3rem;
-  }
-}
-.navegacion-principal {
-    display: flex;
-    gap: 3.5rem;
-  a {
-    color: v.$rojo;
+    h1 {
+      color: v.$rojo;
+      text-align: center;
+      @include m.tablet {
+        margin: 0;
+        text-align: left;
+      }
+      font-size: 3rem;
+    }
+    .navegacion-principal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3.5rem;
+      @include m.tablet {
+        flex-direction: row;
+      }
+      a {
+        color: v.$rojo;
 
-    &:hover {
-      color: v.$blanco;
+        &:hover {
+          color: v.$blanco;
+        }
+      }
     }
   }
 }

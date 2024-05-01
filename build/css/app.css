@@ -376,23 +376,39 @@ body > section {
 }
 .header .contenido-header {
   padding: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
-.header h1 {
+@media (min-width: 768px) {
+  .header .contenido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.header .contenido-header h1 {
   color: rgba(255, 0, 0, 0.959);
-  margin: 0;
+  text-align: center;
   font-size: 3rem;
 }
-
-.navegacion-principal {
+@media (min-width: 768px) {
+  .header .contenido-header h1 {
+    margin: 0;
+    text-align: left;
+  }
+}
+.header .contenido-header .navegacion-principal {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 3.5rem;
 }
-.navegacion-principal a {
+@media (min-width: 768px) {
+  .header .contenido-header .navegacion-principal {
+    flex-direction: row;
+  }
+}
+.header .contenido-header .navegacion-principal a {
   color: rgba(255, 0, 0, 0.959);
 }
-.navegacion-principal a:hover {
+.header .contenido-header .navegacion-principal a:hover {
   color: #FFFFFF;
 }
