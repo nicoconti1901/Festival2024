@@ -3,29 +3,75 @@
 
 .galeria {
   @include m.contenedor;
-  
 
   &-imagenes {
+    cursor: pointer;
     @include m.grid(1, 1rem);
 
-    @include m.telefono{
+    @include m.telefono {
       @include m.grid(2, 2rem);
     }
 
-    @include m.tablet{
-        @include m.grid(3, 2rem);
-      }
+    @include m.tablet {
+      @include m.grid(3, 2rem);
+    }
 
-      @include m.desktop{
-        @include m.grid(4, 2rem);
-        
-      }
+    @include m.desktop {
+      @include m.grid(4, 2rem);
+    }
 
-      img{
-        height: 20rem;
-        object-fit: cover;
-        margin-bottom: 2rem;
-       
-      }
+    img {
+      height: 20rem;
+      object-fit: cover;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba($color: v.$negro, $alpha: 0.5);
+  display: grid;
+  place-items: center;
+  animation: fadeIn ease-in 0.4s;
+
+  &.fade-out {
+    animation: fadeOut ease-in 0.6s;
+  }
+
+  img {
+    max-width: 80rem;
+  }
+}
+
+.btn-cerrar{
+  width: 4rem;
+  height: 4rem;
+  background-color: v.$blanco;
+  border-radius: 50%;
+  border: none;
+  color: v.$negro;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
