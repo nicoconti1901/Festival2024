@@ -4,6 +4,14 @@
 .header {
   background-color: v.$negro;
 
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0.1rem 0.2rem 0.3rem rgba(7, 241, 53, 0.5);
+  }
+
   .contenido-header {
     padding: 2rem;
     @include m.tablet {
@@ -32,7 +40,8 @@
       a {
         color: v.$rojo;
 
-        &:hover {
+        &:hover,
+        &.active {
           color: v.$blanco;
         }
       }
